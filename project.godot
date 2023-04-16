@@ -11,15 +11,14 @@ config_version=5
 [application]
 
 config/name="Capy"
-run/main_scene="res://Scenes/Menu/start_screen.tscn"
+run/main_scene="res://Scenes/puzzle_one.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
-window/size/resizable=false
+window/size/viewport_width=320
+window/size/viewport_height=240
 window/stretch/mode="viewport"
 
 [importer_defaults]
@@ -43,6 +42,12 @@ texture={
 "roughness/mode": 0,
 "roughness/src_normal": ""
 }
+
+[layer_names]
+
+2d_physics/layer_1="pins"
+2d_physics/layer_2="gear_overlap"
+2d_physics/layer_8="gear_grab"
 
 [rendering]
 
