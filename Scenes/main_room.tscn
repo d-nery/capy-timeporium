@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8qpktnhmj56"]
+
+[ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_nnxqc"]
+[ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="2_uoc50"]
+
+[node name="MainRoom" type="Node2D"]
+
+[node name="Game-room" type="Sprite2D" parent="."]
+position = Vector2(160, 119)
+texture = ExtResource("1_nnxqc")
+
+[node name="Capy" type="Sprite2D" parent="."]
+position = Vector2(161, 113)
+texture = ExtResource("2_uoc50")
