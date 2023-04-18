@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmgyfafabqq2p"]
+
+[ext_resource type="PackedScene" uid="uid://dt3tggkjfqrua" path="res://Scenes/Objects/pin.tscn" id="1_1pgdu"]
+[ext_resource type="PackedScene" uid="uid://cwxii7jho1ems" path="res://Scenes/Objects/gear.tscn" id="2_qb35j"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f3olk"]
+
+[node name="puzzle_one" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(159.235, 119.235)
+scale = Vector2(319.529, 239.529)
+texture = SubResource("CanvasTexture_f3olk")
+
+[node name="TestePin" parent="." instance=ExtResource("1_1pgdu")]
+
+[node name="TestePin2" parent="." instance=ExtResource("1_1pgdu")]
+position = Vector2(90, 89)
+
+[node name="TesteGear" parent="." instance=ExtResource("2_qb35j")]
+
+[node name="TesteGear2" parent="." instance=ExtResource("2_qb35j")]
+position = Vector2(247, 70)
