@@ -14,17 +14,18 @@ func move(new_position):
 	
 	$Capy/CapyAnimationPlayer.play(animation_name)
 
-func _on_left_table_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and event.pressed):
-		move("left")
+func is_click(event):
+	return event is InputEventMouseButton and event.pressed
 
-func _on_middle_table_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and event.pressed):
-		move("middle")
-
-func _on_right_table_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and event.pressed):
-		move("right")
+func _on_table_input_event(viewport, event, shape_idx, new_position):
+	if event is InputEventMouseButton and event.pressed:
+		move(new_position)
 
 func _on_capy_animation_player_animation_finished(anim_name):
 	moving = false
+
+func _on_table_mouse_entered():
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+func _on_table_mouse_exited():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

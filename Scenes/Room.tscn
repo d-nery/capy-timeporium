@@ -160,6 +160,12 @@ position = Vector2(264, 145)
 polygon = PackedVector2Array(-25, -15, 12, -15, 31, 15, 32, 22, -15, 22, -13, 12)
 
 [connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
-[connection signal="input_event" from="LeftTable" to="." method="_on_left_table_input_event"]
-[connection signal="input_event" from="MiddleTable" to="." method="_on_middle_table_input_event"]
-[connection signal="input_event" from="RightTable" to="." method="_on_right_table_input_event"]
+[connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
+[connection signal="mouse_entered" from="LeftTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="LeftTable" to="." method="_on_table_mouse_exited"]
+[connection signal="input_event" from="MiddleTable" to="." method="_on_table_input_event" binds= ["middle"]]
+[connection signal="mouse_entered" from="MiddleTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="MiddleTable" to="." method="_on_table_mouse_exited"]
+[connection signal="input_event" from="RightTable" to="." method="_on_table_input_event" binds= ["right"]]
+[connection signal="mouse_entered" from="RightTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="RightTable" to="." method="_on_table_mouse_exited"]
