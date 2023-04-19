@@ -4,7 +4,7 @@ var capy_position = 'middle'
 var moving = false
 
 func move(new_position):
-	if moving:
+	if moving or new_position == capy_position:
 		return
 	
 	moving = true
