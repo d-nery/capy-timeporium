@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg8qpktnhmj56"]
+[gd_scene load_steps=4 format=3 uid="uid://cg8qpktnhmj56"]
 
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_nnxqc"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="2_uoc50"]
+[ext_resource type="PackedScene" uid="uid://ckpge84y5o2kc" path="res://Scenes/Actors/client.tscn" id="3_nu4fa"]
 
 [node name="MainRoom" type="Node2D"]
 
@@ -12,3 +13,21 @@ texture = ExtResource("1_nnxqc")
 [node name="Capy" type="Sprite2D" parent="."]
 position = Vector2(161, 113)
 texture = ExtResource("2_uoc50")
+
+[node name="Client" parent="." instance=ExtResource("3_nu4fa")]
+position = Vector2(272, 177)
+
+[node name="Sprite2D" parent="Client" index="0"]
+frame = 1
+
+[node name="Client2" parent="." instance=ExtResource("3_nu4fa")]
+position = Vector2(165, 181)
+
+[node name="Client3" parent="." instance=ExtResource("3_nu4fa")]
+position = Vector2(67, 179)
+
+[node name="Sprite2D" parent="Client3" index="0"]
+frame = 3
+
+[editable path="Client"]
+[editable path="Client3"]
