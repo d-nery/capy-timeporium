@@ -1,0 +1,171 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtyvidyxrcf5a"]
+
+[ext_resource type="Script" path="res://Scenes/Room.gd" id="1_tuqrp"]
+[ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
+[ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_6ggd5"]
+
+[sub_resource type="Animation" id="Animation_1pedm"]
+resource_name = "middle_to_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-75, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uasj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lirgr"]
+resource_name = "middle_to_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lxl3d"]
+resource_name = "left_to_middle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-75, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8br3e"]
+resource_name = "right_to_middle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m2rd6"]
+resource_name = "left_to_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-75, 0), Vector2(0, 0), Vector2(100, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ltk21"]
+resource_name = "right_to_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(100, 0), Vector2(0, 0), Vector2(-75, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bpv2o"]
+_data = {
+"RESET": SubResource("Animation_uasj7"),
+"left_to_middle": SubResource("Animation_lxl3d"),
+"left_to_right": SubResource("Animation_m2rd6"),
+"middle_to_left": SubResource("Animation_1pedm"),
+"middle_to_right": SubResource("Animation_lirgr"),
+"right_to_left": SubResource("Animation_ltk21"),
+"right_to_middle": SubResource("Animation_8br3e")
+}
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_tuqrp")
+
+[node name="Game-room" type="Sprite2D" parent="."]
+position = Vector2(161, 120)
+texture = ExtResource("1_vf8nt")
+
+[node name="Capy" type="Sprite2D" parent="."]
+position = Vector2(158, 115)
+texture = ExtResource("3_6ggd5")
+
+[node name="CapyAnimationPlayer" type="AnimationPlayer" parent="Capy"]
+libraries = {
+"": SubResource("AnimationLibrary_bpv2o")
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(85, 3)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(66, 130, 100, 130, 89, 161, 89, 169, 53, 169, 53, 156)
+
+[node name="LeftTable" type="Area2D" parent="."]
+position = Vector2(77, 141)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftTable"]
+polygon = PackedVector2Array(-11, -11, 23, -11, 12, 21, 12, 28, -24, 28, -24, 15)
+
+[node name="MiddleTable" type="Area2D" parent="."]
+position = Vector2(164, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MiddleTable"]
+polygon = PackedVector2Array(-23, -14, 22, -14, 25, 15, 26, 22, -28, 23, -27, 15)
+
+[node name="RightTable" type="Area2D" parent="."]
+position = Vector2(264, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightTable"]
+polygon = PackedVector2Array(-25, -15, 12, -15, 31, 15, 32, 22, -15, 22, -13, 12)
+
+[connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
+[connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
+[connection signal="mouse_entered" from="LeftTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="LeftTable" to="." method="_on_table_mouse_exited"]
+[connection signal="input_event" from="MiddleTable" to="." method="_on_table_input_event" binds= ["middle"]]
+[connection signal="mouse_entered" from="MiddleTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="MiddleTable" to="." method="_on_table_mouse_exited"]
+[connection signal="input_event" from="RightTable" to="." method="_on_table_input_event" binds= ["right"]]
+[connection signal="mouse_entered" from="RightTable" to="." method="_on_table_mouse_entered"]
+[connection signal="mouse_exited" from="RightTable" to="." method="_on_table_mouse_exited"]
