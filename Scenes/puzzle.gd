@@ -17,9 +17,8 @@ func _ready():
 	create_gear(Vector2(260, 100))
 	create_gear(Vector2(279, 200))
 
-var grabbing: Gear = null
-
 # Guarantees only one gear is clicked at a time
+var grabbing: Gear = null
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var params = PhysicsPointQueryParameters2D.new()
@@ -38,13 +37,12 @@ func _input(event):
 			grabbing.handle_click(false)
 			grabbing = null
 
-
 func create_pin(pos: Vector2):
 	var pin = pin_scene.instantiate()
 	pin.position = pos
 	pins.append(pin)
 	add_child(pin)
-	
+
 func create_gear(pos: Vector2):
 	var gear = gear_scene.instantiate()
 	gear.position = pos
