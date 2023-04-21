@@ -4,7 +4,7 @@ var capy_position = 'middle'
 var moving = false
 
 func start_puzzle():
-	get_tree().change_scene_to_file("res://Scenes/puzzle_one.tscn")
+	get_tree().change_scene_to_file("res://Scenes/table.tscn")
 
 func _on_table_input_event(viewport, event, shape_idx, new_position):
 	if !moving and event is InputEventMouseButton and event.pressed:
