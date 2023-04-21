@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Room.gd" id="1_tuqrp"]
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_6ggd5"]
+[ext_resource type="Texture2D" uid="uid://jiqa2qo55kci" path="res://Assets/Objects/mini-clock.png" id="4_h7paj"]
 
 [sub_resource type="Animation" id="Animation_uasj7"]
 length = 0.001
@@ -158,6 +159,18 @@ position = Vector2(264, 145)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightTable"]
 polygon = PackedVector2Array(-25, -15, 12, -15, 31, 15, 32, 22, -15, 22, -13, 12)
+
+[node name="Mini-clock" type="Sprite2D" parent="."]
+position = Vector2(76, 145)
+texture = ExtResource("4_h7paj")
+
+[node name="Mini-clock2" type="Sprite2D" parent="."]
+position = Vector2(160, 145)
+texture = ExtResource("4_h7paj")
+
+[node name="Mini-clock3" type="Sprite2D" parent="."]
+position = Vector2(265, 143)
+texture = ExtResource("4_h7paj")
 
 [connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
 [connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
