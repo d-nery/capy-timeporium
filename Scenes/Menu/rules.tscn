@@ -1,20 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dppnf568drlf5"]
+[gd_scene load_steps=4 format=3 uid="uid://dppnf568drlf5"]
 
 [ext_resource type="FontFile" uid="uid://c3eqtmu8yarnp" path="res://Assets/Minecraft.ttf" id="1_3dofo"]
 [ext_resource type="Script" path="res://Scenes/Menu/rules.gd" id="1_20skb"]
+[ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="2_6c05x"]
 
 [node name="Rules" type="Node2D"]
 script = ExtResource("1_20skb")
 
-[node name="Game-room" type="Panel" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Game-room" type="Sprite2D" parent="."]
+position = Vector2(160, 120)
+scale = Vector2(1, 0.995833)
+texture = ExtResource("2_6c05x")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 322.0
+offset_right = 320.0
 offset_bottom = 240.0
 
 [node name="Button" type="Button" parent="."]
