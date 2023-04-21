@@ -126,7 +126,7 @@ _data = {
 script = ExtResource("1_tuqrp")
 
 [node name="Game-room" type="Sprite2D" parent="."]
-position = Vector2(161, 120)
+position = Vector2(160, 120)
 texture = ExtResource("1_vf8nt")
 
 [node name="Capy" type="Sprite2D" parent="."]
