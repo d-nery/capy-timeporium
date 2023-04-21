@@ -1,4 +1,4 @@
-extends StaticBody2D
 class_name Pin
+extends StaticBody2D
 
-var has_gear = false
+@export var has_gear = false

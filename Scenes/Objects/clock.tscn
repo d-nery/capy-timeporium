@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://emuf3d1c5egd"]
+[gd_scene load_steps=5 format=3 uid="uid://bojhdl8tt2n4l"]
 
 [ext_resource type="Texture2D" uid="uid://f380slkruncw" path="res://Assets/Objects/clock-1.png" id="1_es2ci"]
 [ext_resource type="Texture2D" uid="uid://xplmjpr70x7t" path="res://Assets/Objects/clock-2.png" id="2_07yw6"]
@@ -35,6 +35,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(161, 117)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_p2go7")
 animation = &"Closed"

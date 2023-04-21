@@ -1,23 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmgyfafabqq2p"]
+[gd_scene load_steps=5 format=3 uid="uid://cmgyfafabqq2p"]
 
-[ext_resource type="PackedScene" uid="uid://dau1t0ub8n6nx" path="res://Scenes/Objects/pin.tscn" id="1_1pgdu"]
-[ext_resource type="PackedScene" uid="uid://cq0itne85nq0x" path="res://Scenes/Objects/gear.tscn" id="2_qb35j"]
+[ext_resource type="Script" path="res://Scenes/puzzle.gd" id="1_ycu5i"]
+[ext_resource type="Texture2D" uid="uid://ycnjj51wtups" path="res://Assets/Background/table.png" id="2_u4q2o"]
+[ext_resource type="PackedScene" uid="uid://bojhdl8tt2n4l" path="res://Scenes/Objects/clock.tscn" id="5_h2xup"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_f3olk"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrj20"]
+radius = 94.0
 
 [node name="puzzle_one" type="Node2D"]
+script = ExtResource("1_ycu5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(159.235, 119.235)
-scale = Vector2(319.529, 239.529)
-texture = SubResource("CanvasTexture_f3olk")
+position = Vector2(160, 120)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u4q2o")
 
-[node name="TestePin" parent="." instance=ExtResource("1_1pgdu")]
+[node name="Clock2" parent="." instance=ExtResource("5_h2xup")]
+position = Vector2(-46, 13)
 
-[node name="TestePin2" parent="." instance=ExtResource("1_1pgdu")]
-position = Vector2(90, 89)
+[node name="AnimatedSprite2D" parent="Clock2" index="0"]
+animation = &"Open-gears"
 
-[node name="TesteGear" parent="." instance=ExtResource("2_qb35j")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(117, 134)
+shape = SubResource("CircleShape2D_qrj20")
 
-[node name="TesteGear2" parent="." instance=ExtResource("2_qb35j")]
-position = Vector2(247, 70)
+[editable path="Clock2"]

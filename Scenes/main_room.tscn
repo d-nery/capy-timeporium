@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg8qpktnhmj56"]
+[gd_scene load_steps=4 format=3 uid="uid://dqgnbkl4roxdi"]
 
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_nnxqc"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="2_uoc50"]
-[ext_resource type="PackedScene" uid="uid://ckpge84y5o2kc" path="res://Scenes/Actors/client.tscn" id="3_nu4fa"]
+[ext_resource type="PackedScene" uid="uid://bvphp13jbnria" path="res://Scenes/Actors/client.tscn" id="3_nu4fa"]
 
 [node name="MainRoom" type="Node2D"]
 
@@ -20,8 +20,14 @@ position = Vector2(272, 177)
 [node name="Sprite2D" parent="Client" index="0"]
 frame = 1
 
+[node name="CollisionShape2D" parent="Client" index="1"]
+visible = true
+
 [node name="Client2" parent="." instance=ExtResource("3_nu4fa")]
 position = Vector2(165, 181)
+
+[node name="CollisionShape2D" parent="Client2" index="1"]
+visible = true
 
 [node name="Client3" parent="." instance=ExtResource("3_nu4fa")]
 position = Vector2(67, 179)
@@ -29,5 +35,9 @@ position = Vector2(67, 179)
 [node name="Sprite2D" parent="Client3" index="0"]
 frame = 3
 
+[node name="CollisionShape2D" parent="Client3" index="1"]
+visible = true
+
 [editable path="Client"]
+[editable path="Client2"]
 [editable path="Client3"]

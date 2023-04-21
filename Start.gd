@@ -6,7 +6,7 @@ func _ready():
 	pass
 
 func _input(event):
-	if InputUtils.is_click(self, event):
+	if InputUtils.is_click(event):
 		start_game()
 
 func start_game():
