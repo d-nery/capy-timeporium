@@ -7,10 +7,7 @@ func start_puzzle():
 	get_tree().change_scene_to_file("res://Scenes/puzzle_one.tscn")
 
 func _on_table_input_event(viewport, event, shape_idx, new_position):
-	if event is InputEventMouseButton and event.pressed:
-		if moving:
-			return
-			
+	if !moving and event is InputEventMouseButton and event.pressed:
 		if capy_position == new_position:
 			start_puzzle()
 			return
