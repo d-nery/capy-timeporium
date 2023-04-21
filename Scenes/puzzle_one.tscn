@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmgyfafabqq2p"]
 
 [ext_resource type="Script" path="res://Scenes/puzzle.gd" id="1_ycu5i"]
-[ext_resource type="Texture2D" uid="uid://ycnjj51wtups" path="res://Assets/Background/table.png" id="2_u4q2o"]
+[ext_resource type="Texture2D" uid="uid://bij2fd6y53s6s" path="res://Assets/Background/table.png" id="2_u4q2o"]
 [ext_resource type="PackedScene" uid="uid://bojhdl8tt2n4l" path="res://Scenes/Objects/clock.tscn" id="5_h2xup"]
 
 [node name="puzzle_one" type="Node2D"]
@@ -16,6 +16,7 @@ texture = ExtResource("2_u4q2o")
 position = Vector2(-46, 13)
 
 [node name="AnimatedSprite2D" parent="Clock2" index="0"]
+position = Vector2(195, 116)
 animation = &"Open-gears"
 
 [editable path="Clock2"]
