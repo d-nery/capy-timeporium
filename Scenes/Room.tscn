@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm4kgu5qa25xj"]
+[gd_scene load_steps=14 format=3 uid="uid://dm4kgu5qa25xj"]
 
 [ext_resource type="Script" path="res://Scenes/Room.gd" id="1_tuqrp"]
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_6ggd5"]
 [ext_resource type="Texture2D" uid="uid://jiqa2qo55kci" path="res://Assets/Objects/mini-clock.png" id="4_h7paj"]
-[ext_resource type="Texture2D" uid="uid://chfq5hdsr0kcx" path="res://Assets/Objects/coin.png" id="5_14ofo"]
-[ext_resource type="FontFile" uid="uid://c3eqtmu8yarnp" path="res://Assets/Minecraft.ttf" id="6_oa5jy"]
+[ext_resource type="PackedScene" uid="uid://ceioqqddblb5a" path="res://Scenes/Menu/bottom_bar.tscn" id="5_5juu3"]
 
 [sub_resource type="Animation" id="Animation_uasj7"]
 length = 0.001
@@ -174,44 +173,7 @@ texture = ExtResource("4_h7paj")
 position = Vector2(265, 143)
 texture = ExtResource("4_h7paj")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Control" type="BoxContainer" parent="UI"]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/Control/HBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="TextureRect" parent="UI/Control/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("5_14ofo")
-
-[node name="Value" type="Label" parent="UI/Control/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 27.0
-offset_bottom = 35.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 13
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("6_oa5jy")
-theme_override_font_sizes/font_size = 16
-text = "0"
-
-[node name="MarginContainer2" type="MarginContainer" parent="UI/Control/HBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Control/HBoxContainer"]
-layout_mode = 2
+[node name="BottomBar" parent="." instance=ExtResource("5_5juu3")]
 
 [connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
 [connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
