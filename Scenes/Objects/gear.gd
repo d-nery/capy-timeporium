@@ -6,7 +6,7 @@ var pinned = false
 var grabbed_offset = Vector2()
 var prev_pos = Vector2()
 var pinned_to: Pin = null
-var parent: Puzzle = null
+var type = "A"
 
 @onready var pin_area = $PinArea
 
@@ -19,23 +19,24 @@ func handle_click(is_pressed):
 		get_parent().move_child(self, -1)
 		pinned = false
 		if pinned_to:
-			pinned_to.has_gear = false
+			pinned_to.gear_type = null
 		pinned_to = null
 	else:
 		if pin_area.has_overlapping_bodies():
 			var pin = pin_area.get_overlapping_bodies()[0]
 			if pin == pinned_to:
 				return
-			if pin.has_gear:
+			if pin.gear_type != null:
 				position = prev_pos
 				return
 			position = pin.position
 			pinned = true
 			pinned_to = pin
-			pinned_to.has_gear = true
+			pinned_to.gear_type = type
 		elif position.x < 230:
 			position = prev_pos
 		prev_pos = position
+		get_parent().check_victory()
 		return
 	grabbed_offset = position - get_global_mouse_position()
 

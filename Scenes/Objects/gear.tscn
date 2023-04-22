@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq0itne85nq0x"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/gear.gd" id="1_ab3g0"]
-[ext_resource type="Texture2D" uid="uid://co43n4nikltga" path="res://Assets/Objects/gear-3.png" id="2_pxnm8"]
+[ext_resource type="Texture2D" uid="uid://uu6g4uea885f" path="res://Assets/Objects/gear-3.png" id="2_pxnm8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k782p"]
 radius = 39.0128
@@ -9,14 +9,13 @@ radius = 39.0128
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ppal"]
 radius = 11.0
 
-[node name="TesteGear" type="StaticBody2D"]
-position = Vector2(252, 186)
+[node name="Gear" type="StaticBody2D"]
 collision_layer = 128
 collision_mask = 0
 input_pickable = true
 script = ExtResource("1_ab3g0")
 
-[node name="TesteGear2" type="Sprite2D" parent="."]
+[node name="GearSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_pxnm8")
 
 [node name="GrabArea" type="CollisionShape2D" parent="."]
