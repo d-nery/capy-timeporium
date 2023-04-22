@@ -46,6 +46,8 @@ func create_pin(pos: Vector2):
 func create_gear(pos: Vector2):
 	var gear = gear_scene.instantiate()
 	gear.position = pos
-	gear.parent = self
 	gears.append(gear)
 	add_child(gear)
+	
+func check_victory():
+	pass

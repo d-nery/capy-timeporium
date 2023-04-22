@@ -1,15 +1,10 @@
 extends Node2D
 
-@onready var bottom_bar = $Sprite2D/BottomBar
+@onready var bottom_bar = $BottomBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	bottom_bar.start_timer()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_button_pressed():
