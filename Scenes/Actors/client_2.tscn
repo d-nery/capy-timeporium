@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ii4xyxn7abk"]
+
+[ext_resource type="Texture2D" uid="uid://cw4801f0qspso" path="res://Assets/Actors/cats-clients.png" id="1_33cnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut4v5"]
+size = Vector2(8, 8)
+
+[node name="Client" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_33cnd")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ut4v5")

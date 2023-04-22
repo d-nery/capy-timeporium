@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm4kgu5qa25xj"]
+[gd_scene load_steps=17 format=3 uid="uid://dm4kgu5qa25xj"]
 
 [ext_resource type="Script" path="res://Scenes/Room.gd" id="1_tuqrp"]
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_6ggd5"]
 [ext_resource type="Texture2D" uid="uid://jiqa2qo55kci" path="res://Assets/Objects/mini-clock.png" id="4_h7paj"]
-[ext_resource type="PackedScene" uid="uid://ceioqqddblb5a" path="res://Scenes/Menu/bottom_bar.tscn" id="5_5juu3"]
+[ext_resource type="PackedScene" path="res://Scenes/Menu/bottom_bar.tscn" id="5_5juu3"]
+[ext_resource type="PackedScene" uid="uid://civfbllcl8qj0" path="res://Scenes/Actors/client_1.tscn" id="6_5vcl1"]
+[ext_resource type="PackedScene" uid="uid://0ii4xyxn7abk" path="res://Scenes/Actors/client_2.tscn" id="7_r2n8i"]
+[ext_resource type="PackedScene" uid="uid://bvphp13jbnria" path="res://Scenes/Actors/client.tscn" id="8_oapka"]
 
 [sub_resource type="Animation" id="Animation_uasj7"]
 length = 0.001
@@ -138,11 +141,6 @@ libraries = {
 "": SubResource("AnimationLibrary_bpv2o")
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(85, 3)
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(66, 130, 100, 130, 89, 161, 89, 169, 53, 169, 53, 156)
-
 [node name="LeftTable" type="Area2D" parent="."]
 position = Vector2(77, 141)
 
@@ -170,10 +168,29 @@ position = Vector2(160, 145)
 texture = ExtResource("4_h7paj")
 
 [node name="Mini-clock3" type="Sprite2D" parent="."]
-position = Vector2(265, 143)
+position = Vector2(265, 145)
 texture = ExtResource("4_h7paj")
 
 [node name="BottomBar" parent="." instance=ExtResource("5_5juu3")]
+
+[node name="Clients" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 165.0
+offset_right = 319.0
+offset_bottom = 202.0
+
+[node name="MiddleClient" parent="Clients" instance=ExtResource("6_5vcl1")]
+position = Vector2(164, 16)
+rotation = -0.0872665
+
+[node name="RightClient" parent="Clients" instance=ExtResource("7_r2n8i")]
+position = Vector2(274, 15)
+rotation = -0.0872665
+
+[node name="LeftClient" parent="Clients" instance=ExtResource("8_oapka")]
+position = Vector2(69, 16)
+rotation = -0.0872665
 
 [connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
 [connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
