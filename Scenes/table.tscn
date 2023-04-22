@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8nky3pxc0uq"]
+[gd_scene load_steps=6 format=3 uid="uid://b484k1asj1fnq"]
 
 [ext_resource type="Script" path="res://Scenes/table.gd" id="1_qdwi6"]
 [ext_resource type="Texture2D" uid="uid://bcf41vyb5whgn" path="res://Assets/Background/table.png" id="1_v13ux"]
@@ -16,14 +16,14 @@ texture = ExtResource("1_v13ux")
 
 [node name="puzzle_one" parent="." instance=ExtResource("2_u1585")]
 
-[node name="Button" type="Button" parent="."]
+[node name="CompletePuzzleButton" type="Button" parent="."]
 offset_left = 172.0
 offset_top = 29.0
 offset_right = 185.0
 offset_bottom = 42.0
 flat = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 offset_left = 16.0
 offset_top = 12.0
 offset_right = 92.0
@@ -37,5 +37,5 @@ flat = true
 
 [node name="BottomBar" parent="." instance=ExtResource("3_1eslt")]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CompletePuzzleButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_button_2_pressed"]

@@ -14,6 +14,8 @@ func _on_button_pressed():
 		CoinCounter.coins = 10
 	else:
 		CoinCounter.coins = 5
+	
+	GameState.complete_puzzle()
 	get_tree().change_scene_to_file("res://Scenes/Room.tscn")	
 
 

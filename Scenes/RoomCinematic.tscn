@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://0ii4xyxn7abk" path="res://Scenes/Actors/client_2.tscn" id="5_ao7it"]
 [ext_resource type="Texture2D" uid="uid://jiqa2qo55kci" path="res://Assets/Objects/mini-clock.png" id="7_vt55r"]
 
+[sub_resource type="Animation" id="Animation_7hugc"]
+length = 2.0
+
 [sub_resource type="Animation" id="Animation_675j2"]
 resource_name = "clients_entering"
 length = 2.0
@@ -24,13 +27,25 @@ tracks/0/keys = {
 "values": [Vector2(0, 240), Vector2(0, 165)]
 }
 
-[sub_resource type="Animation" id="Animation_7hugc"]
-length = 2.0
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vmq6b"]
 _data = {
 "RESET": SubResource("Animation_7hugc"),
 "clients_entering": SubResource("Animation_675j2")
+}
+
+[sub_resource type="Animation" id="Animation_oa78o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightClock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(275, 178)]
 }
 
 [sub_resource type="Animation" id="Animation_t27sn"]
@@ -108,21 +123,6 @@ tracks/5/keys = {
 "values": [Vector2(0, 0), Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_oa78o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RightClock:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(275, 178)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cn7s5"]
 _data = {
 "RESET": SubResource("Animation_oa78o"),
@@ -171,12 +171,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="LeftClock" type="Sprite2D" parent="Clocks"]
-position = Vector2(76, 145)
+position = Vector2(73, 179)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("7_vt55r")
 
 [node name="MiddleClock" type="Sprite2D" parent="Clocks"]
-position = Vector2(160, 145)
+position = Vector2(163, 178)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("7_vt55r")
 

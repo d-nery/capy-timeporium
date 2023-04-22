@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Music="*res://Scenes/Music/music.tscn"
 CoinCounter="*res://Scenes/Shared/coin_counter.tscn"
+GameState="*res://Scenes/Shared/game_state.tscn"
 
 [display]
 

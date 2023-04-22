@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm4kgu5qa25xj"]
+[gd_scene load_steps=23 format=3 uid="uid://dm4kgu5qa25xj"]
 
 [ext_resource type="Script" path="res://Scenes/Room.gd" id="1_tuqrp"]
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
@@ -125,6 +125,141 @@ _data = {
 "right_to_middle": SubResource("Animation_8br3e")
 }
 
+[sub_resource type="Animation" id="Animation_o5n0t"]
+resource_name = "leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MiddleMiniClock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-0.847, -36.212), Vector2(2.054, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MiddleMiniClock:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(164, 16), Vector2(164, 91)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2kt0"]
+_data = {
+"leave": SubResource("Animation_o5n0t")
+}
+
+[sub_resource type="Animation" id="Animation_4vlvb"]
+resource_name = "leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightMiniClock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5.9153, -35.6512), Vector2(4.63235, 4.42058)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightMiniClock:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(274, 15), Vector2(274, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwjaw"]
+_data = {
+"leave": SubResource("Animation_4vlvb")
+}
+
+[sub_resource type="Animation" id="Animation_q6s5j"]
+resource_name = "leave"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(69, 16), Vector2(69, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftMiniClock:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10.111, -35.253), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LeftMiniClock:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bg87"]
+_data = {
+"leave": SubResource("Animation_q6s5j")
+}
+
 [node name="Room" type="Node2D"]
 script = ExtResource("1_tuqrp")
 
@@ -159,18 +294,6 @@ position = Vector2(264, 145)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightTable"]
 polygon = PackedVector2Array(-25, -15, 12, -15, 31, 15, 32, 22, -15, 22, -13, 12)
 
-[node name="Mini-clock" type="Sprite2D" parent="."]
-position = Vector2(76, 145)
-texture = ExtResource("4_h7paj")
-
-[node name="Mini-clock2" type="Sprite2D" parent="."]
-position = Vector2(160, 145)
-texture = ExtResource("4_h7paj")
-
-[node name="Mini-clock3" type="Sprite2D" parent="."]
-position = Vector2(265, 145)
-texture = ExtResource("4_h7paj")
-
 [node name="BottomBar" parent="." instance=ExtResource("5_5juu3")]
 
 [node name="Clients" type="Control" parent="."]
@@ -184,13 +307,45 @@ offset_bottom = 202.0
 position = Vector2(164, 16)
 rotation = -0.0872665
 
+[node name="MiddleMiniClock" type="Sprite2D" parent="Clients/MiddleClient"]
+z_index = 1
+z_as_relative = false
+position = Vector2(-0.847, -36.212)
+rotation = 0.0872665
+texture = ExtResource("4_h7paj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clients/MiddleClient"]
+libraries = {
+"": SubResource("AnimationLibrary_m2kt0")
+}
+
 [node name="RightClient" parent="Clients" instance=ExtResource("7_r2n8i")]
 position = Vector2(274, 15)
 rotation = -0.0872665
 
+[node name="RightMiniClock" type="Sprite2D" parent="Clients/RightClient"]
+position = Vector2(-5.9153, -35.6512)
+rotation = 0.0872665
+texture = ExtResource("4_h7paj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clients/RightClient"]
+libraries = {
+"": SubResource("AnimationLibrary_dwjaw")
+}
+
 [node name="LeftClient" parent="Clients" instance=ExtResource("8_oapka")]
 position = Vector2(69, 16)
 rotation = -0.0872665
+
+[node name="LeftMiniClock" type="Sprite2D" parent="Clients/LeftClient"]
+position = Vector2(10.111, -35.253)
+rotation = 0.0872665
+texture = ExtResource("4_h7paj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clients/LeftClient"]
+libraries = {
+"": SubResource("AnimationLibrary_5bg87")
+}
 
 [connection signal="animation_finished" from="Capy/CapyAnimationPlayer" to="." method="_on_capy_animation_player_animation_finished"]
 [connection signal="input_event" from="LeftTable" to="." method="_on_table_input_event" binds= ["left"]]
@@ -202,3 +357,6 @@ rotation = -0.0872665
 [connection signal="input_event" from="RightTable" to="." method="_on_table_input_event" binds= ["right"]]
 [connection signal="mouse_entered" from="RightTable" to="." method="_on_table_mouse_entered"]
 [connection signal="mouse_exited" from="RightTable" to="." method="_on_table_mouse_exited"]
+[connection signal="animation_finished" from="Clients/MiddleClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Clients/RightClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Clients/LeftClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
