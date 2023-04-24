@@ -2,9 +2,9 @@ extends Node2D
 
 @onready var bottom_bar = $BottomBar
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	bottom_bar.start_timer()
+
 
 func _on_game_finished():
 	if (bottom_bar.timer.time_left >= 20):
@@ -13,7 +13,7 @@ func _on_game_finished():
 		CoinCounter.coins = 10
 	else:
 		CoinCounter.coins = 5
-	
+
 	GameState.complete_puzzle()
 	get_tree().change_scene_to_file("res://Scenes/Room.tscn")	
 

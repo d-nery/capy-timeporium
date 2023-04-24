@@ -28,7 +28,7 @@ func _ready():
 	var d = config.radius * 2.0 + 6
 	sprite.scale = Vector2(d/90.0, d/90.0)
 	$Label.text = label
-	if false and is_static:
+	if is_static:
 		$GrabArea.shape.radius = 0
 	else:
 		$GrabArea.shape.radius = config.radius

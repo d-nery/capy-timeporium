@@ -19,7 +19,7 @@ func _ready():
 		create_pin(pin)
 		
 	for gear in config.target_gears:
-		create_gear(gear, false)
+		create_gear(gear, true)
 		
 	create_gear(config.start_gear, true)
 
