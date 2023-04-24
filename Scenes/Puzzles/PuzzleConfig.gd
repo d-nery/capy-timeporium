@@ -2,13 +2,13 @@ class_name PuzzleConfig
 extends Object
 
 class GearConfig:
-	var type: String
+	var sprite: int
 	var label: String
 	var position: Vector2
 	var radius: int
 	
 	func _init(data: Dictionary):
-		self.type = data["type"]
+		self.sprite = data["sprite"]
 		self.label = data["label"]
 		self.position.x = data["position"][0]
 		self.position.y = data["position"][1]

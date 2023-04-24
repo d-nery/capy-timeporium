@@ -1,21 +1,21 @@
 {
 	"target_gears": [
 		{
-			"type": "C",
+			"sprite": 2,
 			"label": "TARGET",
 			"position": [119,138],
 			"radius": 20
 		},
 	],
 	"start_gear": {
-		"type": "B",
+		"sprite": 1,
 		"label": "START",
 		"position": [163,75],
 		"radius": 5
 	},
 	"gears": [
 		{
-			"type": "A",
+			"sprite": 3,
 			"label": "A",
 			"position": [274,144],
 			"radius": 25

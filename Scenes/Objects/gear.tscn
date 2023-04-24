@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cq0itne85nq0x"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/gear.gd" id="1_ab3g0"]
-[ext_resource type="Texture2D" uid="uid://xak5wl2b16ya" path="res://Assets/Objects/gear-3.png" id="2_pxnm8"]
+[ext_resource type="Texture2D" uid="uid://cc4hsv6b2daul" path="res://Assets/Objects/gear-1.png" id="2_befwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k782p"]
 resource_local_to_scene = true
@@ -23,7 +23,7 @@ input_pickable = true
 script = ExtResource("1_ab3g0")
 
 [node name="GearSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_pxnm8")
+texture = ExtResource("2_befwf")
 
 [node name="GrabArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k782p")
