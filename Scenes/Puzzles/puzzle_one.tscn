@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8bg8rhv4b475"]
 
 [ext_resource type="Script" path="res://Scenes/Puzzles/puzzle.gd" id="1_ycu5i"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/clock.tscn" id="5_h2xup"]
+[ext_resource type="PackedScene" uid="uid://bojhdl8tt2n4l" path="res://Scenes/Objects/clock.tscn" id="5_h2xup"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qrj20"]
-radius = 94.47
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjmxw"]
+radius = 85.0
 
 [node name="puzzle_one" type="Node2D"]
 script = ExtResource("1_ycu5i")
@@ -19,7 +19,8 @@ scale = Vector2(1, 1)
 animation = &"Open-gears"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(119, 138)
-shape = SubResource("CircleShape2D_qrj20")
+shape = SubResource("CircleShape2D_hjmxw")
 
 [editable path="Clock2"]

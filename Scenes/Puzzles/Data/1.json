@@ -1,14 +1,31 @@
 {
-	"gears": [{
-		"type": "A",
-		"position": [100,100]
-	},{
-		"type": "A",
-		"position": [120,120]
-	}],
+	"target_gears": [
+		{
+			"type": "C",
+			"label": "TARGET",
+			"position": [119,138],
+			"radius": 20
+		},
+	],
+	"start_gear": {
+		"type": "B",
+		"label": "START",
+		"position": [163,75],
+		"radius": 5
+	},
+	"gears": [
+		{
+			"type": "A",
+			"label": "A",
+			"position": [274,144],
+			"radius": 25
+		}
+	],
 	"pins": [
 		{
-			"position": [200, 200]
+			"position": [148, 103],
+			"target_gear": "A",
+			"direction": "CCW"
 		}
 	]
 }

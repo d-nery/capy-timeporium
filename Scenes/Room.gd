@@ -50,11 +50,7 @@ func is_puzzle_incomplete(puzzle):
 func _on_animation_player_animation_finished(anim_name):
 	moving = false
 
-	var any_incomplete = false
-	for p in GameState.puzzles.values():
-		if !p.complete:
-			any_incomplete = true
-			break
-			
+	var any_incomplete = GameState.puzzles.values().any(func(p): return !p.complete)
+
 	if !any_incomplete:
 		get_tree().change_scene_to_file("res://Scenes/credits.tscn")

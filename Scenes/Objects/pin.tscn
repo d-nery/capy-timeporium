@@ -1,16 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://dau1t0ub8n6nx"]
+[gd_scene load_steps=5 format=3 uid="uid://dau1t0ub8n6nx"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/pin.gd" id="1_v6a7n"]
+[ext_resource type="Texture2D" uid="uid://dbwuksygiw44r" path="res://Assets/Objects/pin.png" id="2_nmim3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ay0dk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwgs0"]
+font_size = 9
 
 [node name="Pin" type="StaticBody2D"]
 collision_mask = 0
 script = ExtResource("1_v6a7n")
 
+[node name="Pin" type="Sprite2D" parent="."]
+scale = Vector2(0.263158, 0.263158)
+texture = ExtResource("2_nmim3")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ay0dk")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 0.133333, 0.168627, 1)
-polygon = PackedVector2Array(0, -3, -3, 0, 0, 3, 3, 0)
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 16.0
+label_settings = SubResource("LabelSettings_cwgs0")

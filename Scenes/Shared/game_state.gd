@@ -1,7 +1,6 @@
 extends Node
 
 class PuzzleState:
-	extends Object
 	var active: bool = false
 	var complete: bool = false
 	var position: String

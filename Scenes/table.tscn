@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8nky3pxc0uq"]
 
 [ext_resource type="Script" path="res://Scenes/table.gd" id="1_qdwi6"]
-[ext_resource type="Texture2D" uid="uid://bcf41vyb5whgn" path="res://Assets/Background/table.png" id="1_v13ux"]
+[ext_resource type="Texture2D" uid="uid://ycnjj51wtups" path="res://Assets/Background/table.png" id="1_v13ux"]
 [ext_resource type="PackedScene" uid="uid://b8bg8rhv4b475" path="res://Scenes/Puzzles/puzzle_one.tscn" id="2_u1585"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/bottom_bar.tscn" id="3_1eslt"]
+[ext_resource type="PackedScene" uid="uid://ceioqqddblb5a" path="res://Scenes/Menu/bottom_bar.tscn" id="3_1eslt"]
 [ext_resource type="FontFile" uid="uid://c3eqtmu8yarnp" path="res://Assets/Minecraft.ttf" id="4_1tp6i"]
 
 [node name="Table" type="Node2D"]
@@ -15,13 +15,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_v13ux")
 
 [node name="puzzle_one" parent="." instance=ExtResource("2_u1585")]
-
-[node name="CompletePuzzleButton" type="Button" parent="."]
-offset_left = 172.0
-offset_top = 29.0
-offset_right = 185.0
-offset_bottom = 42.0
-flat = true
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 16.0
@@ -37,5 +30,5 @@ flat = true
 
 [node name="BottomBar" parent="." instance=ExtResource("3_1eslt")]
 
-[connection signal="pressed" from="CompletePuzzleButton" to="." method="_on_button_pressed"]
+[connection signal="puzzle_completed" from="puzzle_one" to="." method="_on_game_finished"]
 [connection signal="pressed" from="BackButton" to="." method="_on_button_2_pressed"]
