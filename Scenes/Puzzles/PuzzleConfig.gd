@@ -1,13 +1,16 @@
-extends Resource
+class_name PuzzleConfig
+extends Object
 
 class GearConfig:
-	extends Node
 	var type: String
 	var position: Vector2
 	
 class PinConfig:
-	extends Node
 	var position: Vector2
 
-@export var gears: Array[GearConfig]
-@export var pins: Array[PinConfig]
+var gears: Array[GearConfig]
+var pins: Array[PinConfig]
+
+func _init(json_path: String):
+	var config = JSON.parse_string(FileAccess.open(json_path, FileAccess.READ).get_as_text())
+

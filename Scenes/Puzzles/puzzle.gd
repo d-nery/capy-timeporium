@@ -9,6 +9,7 @@ var gears = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var config = PuzzleConfig.new("res://Scenes/Puzzles/Data/1.json")
 	create_pin(Vector2(150, 150))
 	create_pin(Vector2(100, 100))
 	create_pin(Vector2(150, 100))

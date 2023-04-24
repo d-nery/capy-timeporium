@@ -1,0 +1,14 @@
+{
+	"gears": [{
+		"type": "A",
+		"position": [100,100]
+	},{
+		"type": "A",
+		"position": [120,120]
+	}],
+	"pins": [
+		{
+			"position": [200, 200]
+		}
+	]
+}
