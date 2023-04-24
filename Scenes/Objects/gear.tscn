@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0itne85nq0x"]
+[gd_scene load_steps=7 format=3 uid="uid://cq0itne85nq0x"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/gear.gd" id="1_ab3g0"]
-[ext_resource type="Texture2D" uid="uid://uu6g4uea885f" path="res://Assets/Objects/gear-3.png" id="2_pxnm8"]
+[ext_resource type="Texture2D" uid="uid://xak5wl2b16ya" path="res://Assets/Objects/gear-3.png" id="2_pxnm8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k782p"]
+resource_local_to_scene = true
 radius = 39.0128
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ppal"]
 radius = 11.0
+
+[sub_resource type="SystemFont" id="SystemFont_m8jvf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dthb3"]
+font = SubResource("SystemFont_m8jvf")
+font_size = 9
 
 [node name="Gear" type="StaticBody2D"]
 collision_layer = 128
@@ -26,4 +33,14 @@ collision_layer = 2
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PinArea"]
+z_as_relative = false
 shape = SubResource("CircleShape2D_2ppal")
+debug_color = Color(0.996078, 0, 0, 0.215686)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 43.0
+offset_top = -8.0
+offset_right = 83.0
+offset_bottom = 8.0
+label_settings = SubResource("LabelSettings_dthb3")
+vertical_alignment = 1

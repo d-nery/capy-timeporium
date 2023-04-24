@@ -6,8 +6,7 @@ extends Node2D
 func _ready():
 	bottom_bar.start_timer()
 
-
-func _on_button_pressed():
+func _on_game_finished():
 	if (bottom_bar.timer.time_left >= 20):
 		CoinCounter.coins = 15
 	elif(bottom_bar.timer.time_left >= 10):
