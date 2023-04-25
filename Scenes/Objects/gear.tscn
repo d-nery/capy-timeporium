@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cq0itne85nq0x"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/gear.gd" id="1_ab3g0"]
-[ext_resource type="Texture2D" uid="uid://cc4hsv6b2daul" path="res://Assets/Objects/gear-1.png" id="2_befwf"]
+[ext_resource type="Texture2D" uid="uid://dln5kl0vw4skf" path="res://Assets/Objects/gears.png" id="2_avx20"]
 
 [sub_resource type="Animation" id="Animation_qe08j"]
 length = 0.001
@@ -43,7 +43,7 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k782p"]
 resource_local_to_scene = true
-radius = 39.0128
+radius = 20.025
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ppal"]
 radius = 11.0
@@ -58,7 +58,8 @@ input_pickable = true
 script = ExtResource("1_ab3g0")
 
 [node name="GearSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_befwf")
+texture = ExtResource("2_avx20")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GearSprite"]
 libraries = {

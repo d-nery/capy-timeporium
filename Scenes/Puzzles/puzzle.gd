@@ -14,13 +14,13 @@ func _ready():
 	var config = PuzzleConfig.new("res://Scenes/Puzzles/Data/2.json")
 	for gear in config.gears:
 		create_gear(gear)
-		
+
 	for pin in config.pins:
 		create_pin(pin)
-		
+
 	for gear in config.target_gears:
 		create_gear(gear, true)
-		
+
 	create_gear(config.start_gear, true, true)
 
 # Guarantees only one gear is clicked at a time
@@ -31,7 +31,7 @@ func _input(event):
 		params.position = get_global_mouse_position()
 		var shapes = get_world_2d().direct_space_state.intersect_point(params)
 		shapes.sort_custom(func (a, b): b["collider"].get_index() < a["collider"].get_index())
-		
+
 		for shape in shapes:
 			if shape["collider"] is Gear:
 				grabbing = shape["collider"]
@@ -43,11 +43,13 @@ func _input(event):
 			grabbing.handle_click(false)
 			grabbing = null
 
+
 func create_pin(config: PuzzleConfig.PinConfig):
 	var pin = pin_scene.instantiate()
 	pin.setup(config)
 	pins.append(pin)
 	add_child(pin)
+
 
 func create_gear(config: PuzzleConfig.GearConfig, is_static = false, rotating = false):
 	var gear = gear_scene.instantiate()
@@ -58,7 +60,8 @@ func create_gear(config: PuzzleConfig.GearConfig, is_static = false, rotating = 
 
 	gears.append(gear)
 	add_child(gear)
-	
+
+
 func check_victory():
 	if pins.all(func (p: Pin): return p.target_gear == p.gear_type):
 		move_child($Clock2, -1)
@@ -67,4 +70,3 @@ func check_victory():
 		$Clock2/AnimatedSprite2D.play("Closed")
 		await get_tree().create_timer(1.0).timeout
 		puzzle_completed.emit()
-

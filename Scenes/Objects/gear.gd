@@ -11,8 +11,6 @@ var label = ""
 var config: PuzzleConfig.GearConfig
 var is_static: bool
 
-func get_sprite_texture(n): return load("res://Assets/Objects/gear-%s.png" % n)
-
 @onready var pin_area = $PinArea
 @onready var sprite = $GearSprite
 
@@ -24,12 +22,8 @@ func _ready():
 	position = config.position
 	prev_pos = position
 	label = config.label
-	
-	sprite.texture = get_sprite_texture(config.sprite)
-	var original_diameter = sprite.texture.get_width()
-	
-	var scale = (config.radius * 2.0 + 6)/original_diameter
-	sprite.scale = Vector2(scale, scale)
+
+	$GearSprite.set_frame((20 - config.radius)/5)
 	$Label.text = label
 	if is_static:
 		$GrabArea.shape.radius = 0
@@ -64,8 +58,8 @@ func handle_click(is_pressed):
 	elif position.x < 230:
 		position = prev_pos
 		return
-	
-	prev_pos = position
+
+	# prev_pos = position
 	get_parent().check_victory()
 
 func start_rotating():
