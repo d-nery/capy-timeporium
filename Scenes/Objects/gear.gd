@@ -68,6 +68,10 @@ func handle_click(is_pressed):
 	prev_pos = position
 	get_parent().check_victory()
 
+func start_rotating():
+	$GearSprite/AnimationPlayer.play("rotate")
+
+
 func _process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and grabbing:
 		position = get_global_mouse_position() + grabbed_offset

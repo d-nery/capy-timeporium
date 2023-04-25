@@ -16,7 +16,7 @@ class GearConfig:
 	
 class PinConfig:
 	var position: Vector2
-	var target_gear: String
+	var target_gear
 	var direction: String
 	
 	func _init(data: Dictionary):
