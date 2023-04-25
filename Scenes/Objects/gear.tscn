@@ -59,7 +59,7 @@ script = ExtResource("1_ab3g0")
 
 [node name="GearSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_avx20")
-hframes = 4
+hframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GearSprite"]
 libraries = {
