@@ -23,16 +23,23 @@ func _ready():
 	prev_pos = position
 	label = config.label
 
-	$GearSprite.set_frame((20 - config.radius)/5)
+	$GearSprite.set_frame((25 - config.radius)/5)
+
 	$Label.text = label
+	$Label.visible = Config.DEBUG
+
 	if is_static:
 		$GrabArea.shape.radius = 0
 	else:
 		$GrabArea.shape.radius = config.radius
 
+
 func handle_click(is_pressed):
 	grabbing = is_pressed
 	grabbed_offset = position - get_global_mouse_position()
+
+	if Config.DEBUG:
+		return
 
 	if grabbing:
 		get_parent().move_child(self, -1)
@@ -63,9 +70,14 @@ func handle_click(is_pressed):
 	get_parent().check_victory()
 
 func start_rotating():
-	$GearSprite/AnimationPlayer.play("rotate")
+	if pinned_to == null or pinned_to.direction == "CW":
+		$GearSprite/AnimationPlayer.play("rotate")
+		return
+
+	$GearSprite/AnimationPlayer.play_backwards("rotate")
 
 
 func _process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and grabbing:
 		position = get_global_mouse_position() + grabbed_offset
+		$Label.text = "%d,%d" % [position.x, position.y]

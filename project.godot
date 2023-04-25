@@ -18,8 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Music="*res://Scenes/Music/music.tscn"
-CoinCounter="*res://Scenes/Shared/coin_counter.tscn"
-RoomState="*res://Scenes/Shared/room_state.tscn"
+Config="*res://Scenes/Shared/config.gd"
+CoinCounter="*res://Scenes/Shared/coin_counter.gd"
+RoomState="*res://Scenes/Shared/room_state.gd"
 
 [display]
 

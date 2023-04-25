@@ -4,10 +4,10 @@ class ClientState:
 	var active: bool = false
 	var complete: bool = false
 	var position: String
-	
+
 	func _init(position: String):
 		self.position = position
-		
+
 
 @export var clients = {
 	'left': ClientState.new('left'),
@@ -21,7 +21,7 @@ func start_puzzle():
 	var state = get_client(capy_position)
 	if state.complete:
 		return
-	
+
 	for client in clients.values():
 		client.active = false
 

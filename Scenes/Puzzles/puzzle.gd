@@ -11,6 +11,9 @@ var gears = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Config.DEBUG:
+		return
+
 	var config = PuzzleConfig.new("res://Scenes/Puzzles/Data/2.json")
 	for gear in config.gears:
 		create_gear(gear)
@@ -43,6 +46,34 @@ func _input(event):
 			grabbing.handle_click(false)
 			grabbing = null
 
+	if !Config.DEBUG:
+		return
+
+	if event is InputEventKey and event.pressed:
+		var g = PuzzleConfig.GearConfig.new({
+			"label": "R25",
+			"position": [200, 200],
+			"radius": 25,
+		})
+
+		if event.keycode == KEY_A:
+			create_gear(g)
+
+		if event.keycode == KEY_S:
+			g.radius = 20
+			create_gear(g)
+
+		if event.keycode == KEY_D:
+			g.radius = 15
+			create_gear(g)
+
+		if event.keycode == KEY_F:
+			g.radius = 10
+			create_gear(g)
+			
+		if event.keycode == KEY_G:
+			g.radius = 5
+			create_gear(g)
 
 func create_pin(config: PuzzleConfig.PinConfig):
 	var pin = pin_scene.instantiate()
@@ -64,6 +95,10 @@ func create_gear(config: PuzzleConfig.GearConfig, is_static = false, rotating = 
 
 func check_victory():
 	if pins.all(func (p: Pin): return p.target_gear == p.gear_type):
+		for gear in gears:
+			gear.start_rotating()
+
+		await get_tree().create_timer(5.0).timeout
 		move_child($Clock2, -1)
 		$Clock2/AnimatedSprite2D.play("Open-clock")
 		await get_tree().create_timer(0.5).timeout
