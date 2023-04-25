@@ -14,7 +14,7 @@ func _on_game_finished():
 	else:
 		CoinCounter.coins = 5
 
-	GameState.complete_puzzle()
+	RoomState.complete_puzzle()
 	get_tree().change_scene_to_file("res://Scenes/Room.tscn")	
 
 

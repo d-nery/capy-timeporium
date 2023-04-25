@@ -360,3 +360,5 @@ libraries = {
 [connection signal="animation_finished" from="Clients/MiddleClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Clients/RightClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Clients/LeftClient/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="Clients/MiddleClient"]
