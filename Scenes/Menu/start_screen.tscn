@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfblxcgmquk3w"]
+[gd_scene load_steps=7 format=3 uid="uid://dfblxcgmquk3w"]
 
 [ext_resource type="Texture2D" uid="uid://c3wacer5swejl" path="res://Assets/Menu/start_screen.png" id="1_hn36e"]
 [ext_resource type="Script" path="res://Scenes/Menu/start_screen.gd" id="1_ujq2c"]
 [ext_resource type="FontFile" uid="uid://c3eqtmu8yarnp" path="res://Assets/Minecraft.ttf" id="3_m5e8p"]
-[ext_resource type="AudioStream" uid="uid://bmf1s6q4ultkp" path="res://Assets/Songs/Capybara_Capybara_TikTok_Song.mp3" id="4_aocj8"]
 
 [sub_resource type="Animation" id="Animation_4gy4t"]
 length = 0.001
@@ -63,7 +62,3 @@ autoplay = "fade_in_fade_out"
 libraries = {
 "": SubResource("AnimationLibrary_aren4")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_aocj8")
-autoplay = true
