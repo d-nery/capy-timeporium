@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm0jyifoslhwx"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/story.gd" id="1_vogqr"]
+[ext_resource type="Texture2D" uid="uid://b3ell765dcbb6" path="res://Assets/Background/frame-2.png" id="2_1dxu7"]
+
+[node name="Story" type="Node2D"]
+script = ExtResource("1_vogqr")
+
+[node name="Frame-2" type="Sprite2D" parent="."]
+position = Vector2(161, 118)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1dxu7")
+
+[node name="DayTitle" type="Label" parent="."]
+offset_left = 245.0
+offset_top = 10.0
+offset_right = 285.0
+offset_bottom = 29.0
+text = "Day"
+
+[node name="DayText" type="Label" parent="."]
+offset_left = 280.0
+offset_top = 11.0
+offset_right = 320.0
+offset_bottom = 30.0

@@ -43,3 +43,15 @@ func restart():
 		'right': ClientState.new('right')
 	}
 	capy_position = 'middle'
+
+var coins: int = 0:
+	get:
+		return coins
+	set(value):
+		coins += value
+		
+var day: int = 1:
+	get:
+		return day
+	set(value):
+		day += value

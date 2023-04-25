@@ -8,11 +8,11 @@ func _ready():
 
 func _on_game_finished():
 	if (bottom_bar.timer.time_left >= 20):
-		CoinCounter.coins = 15
+		RoomState.coins = 15
 	elif(bottom_bar.timer.time_left >= 10):
-		CoinCounter.coins = 10
+		RoomState.coins = 10
 	else:
-		CoinCounter.coins = 5
+		RoomState.coins = 5
 
 	RoomState.complete_puzzle()
 	get_tree().change_scene_to_file("res://Scenes/Room.tscn")	
