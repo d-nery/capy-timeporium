@@ -114,3 +114,27 @@ text = "Giulio Sá
 Daniel Nery
 Gabriel Sales"
 horizontal_alignment = 1
+
+[node name="MusicTitle" type="Label" parent="AnimationPlayer/Credits"]
+visible = false
+layout_mode = 0
+offset_left = 127.0
+offset_top = 247.0
+offset_right = 190.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("3_3efe8")
+theme_override_font_sizes/font_size = 24
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicText" type="Label" parent="AnimationPlayer/Credits"]
+visible = false
+layout_mode = 0
+offset_left = -32.0
+offset_top = 280.0
+offset_right = 343.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("3_3efe8")
+text = "Capybara Song - TikTok 
+by Gingerbread Soldier"
+horizontal_alignment = 1
