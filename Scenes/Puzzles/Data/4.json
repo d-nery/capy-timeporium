@@ -1,0 +1,88 @@
+{
+  "target_gears": [
+    {
+      "label": "T",
+      "position": [69, 129],
+      "radius": 25
+    },
+    {
+      "label": "T",
+      "position": [123, 184],
+      "radius": 25
+    }
+  ],
+  "start_gear": {
+    "label": "S",
+    "position": [155, 76],
+    "radius": 5
+  },
+  "gears": [
+    {
+      "label": "R10",
+      "position": [274, 144],
+      "radius": 10
+    },
+    {
+      "label": "R15",
+      "position": [260, 200],
+      "radius": 15
+    },
+    {
+      "label": "R10",
+      "position": [290, 200],
+      "radius": 10
+    },
+    {
+      "label": "R15",
+      "position": [290, 100],
+      "radius": 15
+    },
+    {
+      "label": "R20",
+      "position": [290, 170],
+      "radius": 20
+    }
+  ],
+  "pins": [
+    {
+      "position": [159, 90],
+      "target_gear": "R10",
+      "direction": "CCW"
+    },
+    {
+      "position": [134, 94],
+      "target_gear": "R15",
+      "direction": "CW"
+    },
+    {
+      "position": [113, 81],
+      "target_gear": "R10",
+      "direction": "CCW"
+    },
+    {
+      "position": [92, 94],
+      "target_gear": "R15",
+      "direction": "CW"
+    },
+    {
+      "position": [76, 176],
+      "target_gear": "R20",
+      "direction": "CW"
+    },
+    {
+      "position": [160, 140],
+      "target_gear": null,
+      "direction": "CW"
+    },
+    {
+      "position": [156, 184],
+      "target_gear": null,
+      "direction": "CW"
+    },
+    {
+      "position": [118, 131],
+      "target_gear": null,
+      "direction": "CW"
+    }
+  ]
+}

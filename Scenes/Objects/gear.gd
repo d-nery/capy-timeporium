@@ -62,7 +62,7 @@ func handle_click(is_pressed):
 		pinned = true
 		pinned_to = pin
 		pinned_to.gear_type = label
-	elif position.x < 230:
+	elif position.x < 230 or position.x >= 320 or position.y <= 0 or position.y >= 240:
 		position = prev_pos
 		return
 

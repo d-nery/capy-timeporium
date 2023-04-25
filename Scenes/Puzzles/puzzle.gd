@@ -14,7 +14,8 @@ func _ready():
 	if Config.DEBUG:
 		return
 
-	var config = PuzzleConfig.new("res://Scenes/Puzzles/Data/2.json")
+	var level = randi_range(1, 4)
+	var config = PuzzleConfig.new("res://Scenes/Puzzles/Data/%d.json" % level)
 	for gear in config.gears:
 		create_gear(gear)
 
