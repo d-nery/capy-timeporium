@@ -6,9 +6,9 @@ extends CanvasLayer
 
 func _process(delta):
 	timer_text.text = "%d:%02d" % [floor(timer.time_left / 60), int(timer.time_left) % 60]
-	coins.text = str(CoinCounter.coins)
+	coins.text = str(RoomState.coins)
 	
-	if (CoinCounter.coins >= 100):
+	if (RoomState.coins >= 100):
 		get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 	
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="1_vf8nt"]
 [ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_6ggd5"]
 [ext_resource type="Texture2D" uid="uid://jiqa2qo55kci" path="res://Assets/Objects/mini-clock.png" id="4_h7paj"]
-[ext_resource type="PackedScene" path="res://Scenes/Menu/bottom_bar.tscn" id="5_5juu3"]
+[ext_resource type="PackedScene" uid="uid://ceioqqddblb5a" path="res://Scenes/Menu/bottom_bar.tscn" id="5_5juu3"]
 [ext_resource type="PackedScene" uid="uid://civfbllcl8qj0" path="res://Scenes/Actors/client_1.tscn" id="6_5vcl1"]
 [ext_resource type="PackedScene" uid="uid://0ii4xyxn7abk" path="res://Scenes/Actors/client_2.tscn" id="7_r2n8i"]
 [ext_resource type="PackedScene" uid="uid://bvphp13jbnria" path="res://Scenes/Actors/client.tscn" id="8_oapka"]

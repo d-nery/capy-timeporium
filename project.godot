@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Music="*res://Scenes/Music/music.tscn"
 Config="*res://Scenes/Shared/config.gd"
-CoinCounter="*res://Scenes/Shared/coin_counter.gd"
 RoomState="*res://Scenes/Shared/room_state.gd"
 
 [display]
