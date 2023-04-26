@@ -11,8 +11,14 @@ func _process(_delta):
 	if (RoomState.coins >= 100):
 		get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
+func hide_timer():
+	$Control/HBoxContainer/HBoxContainer2.visible = false
+	
+func show_timer():
+	$Control/HBoxContainer/HBoxContainer2.visible = true
 
 func start_timer():
+	show_timer()
 	$Control/HBoxContainer/HBoxContainer2/Timer.start(30)
 
 func stop_timer():

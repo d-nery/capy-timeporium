@@ -11,6 +11,7 @@ var capyOffsets = {
 }
 
 func _ready():
+	$BottomBar.hide_timer()
 	$Capy.offset = capyOffsets[RoomState.capy_position]
 
 	for client in RoomState.clients.values():
