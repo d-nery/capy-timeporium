@@ -25,6 +25,7 @@ offset_right = 320.0
 offset_bottom = 30.0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

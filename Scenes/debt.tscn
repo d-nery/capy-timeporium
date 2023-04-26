@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://tgi320730n0w"]
+
+[ext_resource type="Script" path="res://Scenes/debt.gd" id="1_12t7g"]
+[ext_resource type="Texture2D" uid="uid://c1w8bc2xoegcd" path="res://Assets/Background/game-room.png" id="2_yi8qc"]
+[ext_resource type="Texture2D" uid="uid://c3hhkqwbnpi1w" path="res://Assets/Actors/capy.png" id="3_grhcb"]
+
+[node name="Debt" type="Node2D"]
+script = ExtResource("1_12t7g")
+
+[node name="Game-room" type="Sprite2D" parent="."]
+position = Vector2(161, 120)
+texture = ExtResource("2_yi8qc")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 72.0
+offset_top = 52.0
+offset_right = 260.0
+offset_bottom = 211.0
+
+[node name="DayTitle" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 42.0
+offset_right = 55.0
+offset_bottom = 61.0
+text = "Day:"
+
+[node name="DayValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 45.0
+offset_right = 179.0
+offset_bottom = 64.0
+text = "01"
+horizontal_alignment = 2
+
+[node name="MoneyTitle" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 21.0
+offset_top = 63.0
+offset_right = 73.0
+offset_bottom = 82.0
+text = "Money: $"
+
+[node name="MoneyValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 64.0
+offset_right = 180.0
+offset_bottom = 83.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="DebtTitle" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 84.0
+offset_right = 72.0
+offset_bottom = 103.0
+text = "Debt: $"
+
+[node name="DebtValue" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 85.0
+offset_right = 181.0
+offset_bottom = 104.0
+text = "1"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.103
+anchor_bottom = 0.039
+offset_left = 54.0
+offset_top = 123.0
+offset_right = 112.636
+offset_bottom = 140.799
+text = "Next day"
+
+[node name="Capy" type="Sprite2D" parent="."]
+position = Vector2(169, 56)
+scale = Vector2(2.15625, 1.96875)
+texture = ExtResource("3_grhcb")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

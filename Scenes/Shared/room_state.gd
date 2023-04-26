@@ -61,3 +61,12 @@ var day: int = 1:
 		return day
 	set(value):
 		day += value
+
+
+var debt: int = 150:
+	get: 
+		return debt
+	set(value):
+		debt -= value
+		if debt <= 0:
+			debt = 0

@@ -56,4 +56,4 @@ func _on_animation_player_animation_finished(_anim_name):
 	var any_incomplete = RoomState.clients.values().any(func(p): return !p.complete)
 
 	if !any_incomplete:
-		get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+		get_tree().change_scene_to_file("res://Scenes/debt.tscn")
