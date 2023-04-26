@@ -3,7 +3,8 @@
     {
       "label": "T",
       "position": [90, 178],
-      "radius": 25
+      "radius": 25,
+      "direction": "CCW"
     }
   ],
   "start_gear": {

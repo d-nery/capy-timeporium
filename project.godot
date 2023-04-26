@@ -28,7 +28,6 @@ window/size/viewport_height=240
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="res://Assets/cursor2.png"
 
 [gui]
 

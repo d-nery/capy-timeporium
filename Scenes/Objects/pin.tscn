@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dau1t0ub8n6nx"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/pin.gd" id="1_v6a7n"]
-[ext_resource type="Texture2D" uid="uid://clnmcbjvws086" path="res://Assets/Objects/pin.png" id="2_nmim3"]
+[ext_resource type="Texture2D" uid="uid://dbwuksygiw44r" path="res://Assets/Objects/pin.png" id="2_nmim3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ay0dk"]
 
@@ -20,7 +20,6 @@ texture = ExtResource("2_nmim3")
 shape = SubResource("CircleShape2D_ay0dk")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -20.0
 offset_top = -8.0
 offset_right = 20.0
