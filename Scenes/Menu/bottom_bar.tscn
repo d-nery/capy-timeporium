@@ -46,6 +46,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Timer" type="Timer" parent="Control/HBoxContainer/HBoxContainer2"]
+one_shot = true
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/HBoxContainer2"]
 layout_mode = 2

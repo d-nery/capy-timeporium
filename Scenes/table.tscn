@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8nky3pxc0uq"]
 
 [ext_resource type="Script" path="res://Scenes/table.gd" id="1_qdwi6"]
-[ext_resource type="Texture2D" uid="uid://bcf41vyb5whgn" path="res://Assets/Background/table.png" id="1_v13ux"]
+[ext_resource type="Texture2D" uid="uid://bij2fd6y53s6s" path="res://Assets/Background/table.png" id="1_v13ux"]
 [ext_resource type="PackedScene" uid="uid://b8bg8rhv4b475" path="res://Scenes/Puzzles/puzzle_one.tscn" id="2_u1585"]
 [ext_resource type="PackedScene" uid="uid://ceioqqddblb5a" path="res://Scenes/Menu/bottom_bar.tscn" id="3_1eslt"]
 [ext_resource type="FontFile" uid="uid://c3eqtmu8yarnp" path="res://Assets/Minecraft.ttf" id="4_1tp6i"]
