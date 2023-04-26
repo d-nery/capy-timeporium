@@ -149,12 +149,15 @@ offset_bottom = 277.0
 
 [node name="MiddleClient" parent="Clients" instance=ExtResource("4_pj3ck")]
 position = Vector2(164, 16)
+rotation = -0.0872665
 
 [node name="RightClient" parent="Clients" instance=ExtResource("5_ao7it")]
 position = Vector2(274, 15)
+rotation = -0.0872665
 
 [node name="LeftClient" parent="Clients" instance=ExtResource("3_oe7xd")]
 position = Vector2(69, 16)
+rotation = -0.0872665
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Clients"]
 libraries = {

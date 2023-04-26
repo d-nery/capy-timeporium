@@ -5,12 +5,15 @@ extends CanvasLayer
 @onready var coins = $Control/HBoxContainer/HBoxContainer/Value
 
 func _process(_delta):
-    timer_text.text = "%d:%02d" % [floor(timer.time_left / 60), int(timer.time_left) % 60]
-    coins.text = str(RoomState.coins)
+	timer_text.text = "%d:%02d" % [floor(timer.time_left / 60), int(timer.time_left) % 60]
+	coins.text = str(RoomState.coins)
 
-    if (RoomState.coins >= 100):
-        get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+	if (RoomState.coins >= 100):
+		get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 
 
 func start_timer():
-    $Control/HBoxContainer/HBoxContainer2/Timer.start(30)
+	$Control/HBoxContainer/HBoxContainer2/Timer.start(30)
+
+func stop_timer():
+	$Control/HBoxContainer/HBoxContainer2/Timer.set_paused(true)
